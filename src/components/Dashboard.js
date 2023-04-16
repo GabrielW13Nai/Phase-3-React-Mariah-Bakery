@@ -12,12 +12,15 @@ function Dashboard(){
         <div>
         <i>{ <BakeryDiningIcon />}</i>
         
-        <Typography variant="h3" colour="primary">
+        <Typography variant="h3" colour="primary" sx={{ mt:2}}>
         Mariah's Bakery and Pastries
         </Typography>
+        <Typography variant="h4" colour="primary" sx={{ mt:2}}>
+        Logistical information 
+        </Typography>
         <FormText />
-        <Typography variant="h6" colour="primary">
-        Existing Riders
+        <Typography variant="h5" colour="primary">
+        Rider Information
         </Typography>
         <Body />
         <Search />

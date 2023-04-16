@@ -4,7 +4,7 @@ import TextField from '@mui/material/TextField';
 import { Typography } from '@mui/material'
 import HowToRegIcon from '@mui/icons-material/HowToReg';
 import Button from '@mui/material/Button'
-import { useState } from 'react';
+import { useState,  } from 'react';
 
 
 
@@ -12,13 +12,13 @@ import { useState } from 'react';
 export default function FormText( ){
 
     const [name, SetName] = useState('')
-    const [id_no, SetId] = useState('')
+    const [id_no, SetIdNo] = useState('')
     const [nationality, SetNationality] = useState('')
     const [phone_number, SetPhone] = useState('')
     const [plate_number, SetPlate] = useState('')
 
     const handleName = e => SetName(e.target.value)
-    const handleId = e => SetId(e.target.value)
+    const handleIdNo = e => SetIdNo(e.target.value)
     const handleNationality = e => SetNationality(e.target.value)
     const handlePhone = e => SetPhone(e.target.value)
     const handlePlate = e => SetPlate(e.target.value)
@@ -30,9 +30,9 @@ export default function FormText( ){
       phone_number: phone_number,
       plate_number: plate_number
     }
-
-    function handleSubmit(e){
-        fetch('http://localhost:9292/riders',{
+    
+    function handleSubmit(){
+      fetch('http://localhost:9292/riders',{
         method:"POST",
         headers:{
             "Content-Type":'application/json',
@@ -40,18 +40,21 @@ export default function FormText( ){
         body: JSON.stringify(data),
         })
         .then(res=> res.json())
-        .then(info=> console.log(info))
-      }
+        .then(info=> console.log(info))}
+    
+   
+
   return (
     <>
     <Typography variant="h5" colour="primary">
         Rider Registration Information
     </Typography>
-    <Box
+    <Box 
       component="form" onSubmit={handleSubmit}
       className = "box"
+      display="flex" justifyContent="flex-end"
       sx={{
-        '& .MuiTextField-root': { m: 1.25, width: '25ch' },
+        '& .MuiTextField-root': { m: 1, width: '25ch' },
       }}
       noValidate
       autoComplete="off"
@@ -70,7 +73,7 @@ export default function FormText( ){
         id="id_no"
         label="id no"
         value={data.id_no}
-        onChange={handleId}
+        onChange={handleIdNo}
         
       />
       <TextField
@@ -110,7 +113,8 @@ export default function FormText( ){
     Register
     </Button>
     </Box>
-    
+  
     </>
    );
 }
+
