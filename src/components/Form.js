@@ -32,7 +32,7 @@ export default function FormText( ){
     }
     
     function handleSubmit(){
-      fetch('http://localhost:9292/riders',{
+      fetch('https://mariahs-bakery-web-api-service.onrender.com/riders',{
         method:"POST",
         headers:{
             "Content-Type":'application/json',
