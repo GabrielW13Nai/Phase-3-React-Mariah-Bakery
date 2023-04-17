@@ -11,7 +11,7 @@ import { useState, useEffect } from 'react';
 import DeleteIcon from "@mui/icons-material/Delete";
 import { IconButton } from "@mui/material";
 
-let url = 'http://localhost:9292/riders'
+let url = 'https://mariahs-bakery-web-api-service.onrender.com/riders'
 export default function Body() {
 
   const[info, setInfo]= useState([])
@@ -36,7 +36,7 @@ export default function Body() {
       ;
       }
 
-   useEffect(()=>{fetch('http://localhost:9292/riders')
+   useEffect(()=>{fetch('https://mariahs-bakery-web-api-service.onrender.com/riders')
     .then(res => res.json())
     .then(data =>{
       setInfo(data);

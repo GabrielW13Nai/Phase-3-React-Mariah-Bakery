@@ -23,7 +23,7 @@ const [result, setResult] = useState([])
 // const searchId = useParams()
 
  useEffect(() => {
-  fetch("http://localhost:9292/ongoing")
+  fetch("https://mariahs-bakery-web-api-service.onrender.com/ongoing")
   .then(r=> r.json())
   .then(data=>{
     setResult(data);
